@@ -1,16 +1,3 @@
-Func5("I am an NLPer")
-
-Func5 <- function(tex){
-  hoge <- unlist(strsplit(tex," "))
-  word_bi_gram <- n_gram(hoge)
-
-  fuga <- gsub(" ","",tex)
-  fuga <- unlist(strsplit(piyo,"")) 
-  char_bi_gram <- n_gram(fuga)
-
-  return(list(word_bi_gram,char_bi_gram))
-}
-
 n_gram <- function(vector){
   num <- length(vector)
   row_num = num -1
@@ -22,3 +9,16 @@ n_gram <- function(vector){
   })
   return(piyo)
 }
+
+Func5 <- function(tex){
+  hoge <- unlist(strsplit(tex," "))
+  word_bi_gram <- n_gram(hoge)
+
+  fuga <- gsub(" ","",tex)
+  fuga <- unlist(strsplit(fuga,"")) 
+  char_bi_gram <- n_gram(fuga)
+
+  return(list(word_bi_gram,char_bi_gram))
+}
+
+Func5("I am an NLPer")

@@ -1,4 +1,4 @@
-Func15(5)
+args1 = commandArgs(trailingOnly=TRUE)[1]
 
 Func15 <- function(x){
   hoge <- read.table("hightemp.txt")
@@ -6,3 +6,5 @@ Func15 <- function(x){
   num2 <- nrow(hoge)  
   return(hoge[num1:num2,])
 }
+
+Func15(as.numeric(args1))

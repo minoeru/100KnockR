@@ -1,5 +1,3 @@
-Func4("Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can.")
-
 Func4 <- function(tex){
   num <- c(1,5,6,7,8,9,15,16,19)
   tex <- gsub("\\.|,","",tex)
@@ -15,3 +13,5 @@ Func4 <- function(tex){
   names(hogera) <- c(1:count)
   return(hogera)
 }
+
+Func4("Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can.")
