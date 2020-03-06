@@ -1,23 +1,13 @@
+library(magrittr)
+
 n_gram <- function(vector){
-  num <- length(vector)
-  row_num = num -1
-  sum = 2 *(num - 1)
-  piyo <- matrix(c(1:sum), nrow = row_num, ncol = 2)
-  lapply(1:row_num,function(x){
-    piyo[x,1] <<- vector[x]
-    piyo[x,2] <<- vector[x+1]
-  })
-  return(piyo)
+  hoge <- paste(vector,vector,sep=" ",collapse=" ") %>% strsplit(.," ") %>% unlist()
+  hoge[c(-1,-length(hoge))] %>% matrix(.,ncol=2,byrow = T) %>% return()
 }
 
 Func5 <- function(tex){
-  hoge <- unlist(strsplit(tex," "))
-  word_bi_gram <- n_gram(hoge)
-
-  fuga <- gsub(" ","",tex)
-  fuga <- unlist(strsplit(fuga,"")) 
-  char_bi_gram <- n_gram(fuga)
-
+  word_bi_gram <- strsplit(tex," ") %>% unlist() %>% n_gram()
+  char_bi_gram <- gsub(" ","",tex) %>% strsplit(.,"") %>% unlist() %>% n_gram()
   return(list(word_bi_gram,char_bi_gram))
 }
 
