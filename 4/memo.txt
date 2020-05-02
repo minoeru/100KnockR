@@ -1,0 +1,3 @@
+brew install mecab
+brew install mecab-ipadic
+install.packages("RMeCab", repos = "http://rmecab.jp/R")
